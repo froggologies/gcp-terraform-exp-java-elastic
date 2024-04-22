@@ -11,3 +11,7 @@ terraform {
     }
   }
 }
+
+provider "google" {
+  credentials = file(var.credential_path)
+}

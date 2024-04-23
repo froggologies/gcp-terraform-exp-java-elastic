@@ -12,4 +12,8 @@ resource "google_project_service" "services" {
   service = each.value
 
   disable_dependent_services = true
+
+  lifecycle {
+    prevent_destroy = true
+  }
 }

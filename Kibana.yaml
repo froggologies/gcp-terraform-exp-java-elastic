@@ -2,7 +2,7 @@ apiVersion: kibana.k8s.elastic.co/v1
 kind: Kibana
 metadata:
   name: kibana
-  namespace: efk
+  namespace: operation
 spec:
   version: 8.13.2
   count: 1
@@ -12,3 +12,7 @@ spec:
     service:
       spec:
         type: LoadBalancer
+  config:
+    xpack.fleet.packages:
+    - name: apm
+      version: latest

@@ -1,0 +1,16 @@
+apiVersion: apm.k8s.elastic.co/v1
+kind: ApmServer
+metadata:
+  name: apm-server
+  namespace: operation
+spec:
+  version: 8.13.2
+  count: 1
+  http:
+    service:
+      spec:
+        type: LoadBalancer
+  elasticsearchRef:
+    name: elasticsearch
+  kibanaRef:
+    name: kibana

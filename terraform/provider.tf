@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~>1.7.0"
+  required_version = "~>1.8.0"
   required_providers {
     google = {
       source  = "hashicorp/google"
@@ -10,8 +10,4 @@ terraform {
       version = "~>3.0"
     }
   }
-}
-
-provider "google" {
-  credentials = file(var.credential_path)
 }
